@@ -24,13 +24,6 @@ namespace Patients.Api.Controllers
             return CreatedAtAction(nameof(Get), new { }, new Envelope<PatientDto>(dto));
         }
 
-        [HttpGet(Name = "Get")]
-        public async Task<ActionResult<Envelope<IEnumerable<PatientDto>>>> Get(CancellationToken ct)
-        {
-            var items = await _list.HandleAsync(ToUserTz);
-            return Ok(new Envelope<IEnumerable<PatientDto>>(items, new { version = "v1", count = items.Count }));
-        }
-
         private DateTimeOffset ToUserTz(DateTime utc)
         {
             var tzId = Request.Headers["X-User-Timezone"].FirstOrDefault();
@@ -61,6 +54,50 @@ namespace Patients.Api.Controllers
                     catch { }
                 }
                 return new DateTimeOffset(DateTime.SpecifyKind(utc, DateTimeKind.Utc));
+            }
+        }
+
+        [HttpGet(Name = "Get")]
+        public async Task<ActionResult<Envelope<IEnumerable<PatientDto>>>> Get(CancellationToken ct)
+        {
+            var tz = ResolveTz();
+
+            var items = await _list.HandleAsync(
+                toUserTz: utc =>
+                {
+                    var local = TimeZoneInfo.ConvertTimeFromUtc(DateTime.SpecifyKind(utc, DateTimeKind.Utc), tz);
+                    return new DateTimeOffset(local, tz.GetUtcOffset(local));
+                },
+                todayProvider: () =>
+                {
+                    // "Hoy" según la zona horaria del usuario (IANA o fallback)
+                    var localNow = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, tz);
+                    return DateOnly.FromDateTime(localNow);
+                }
+            );
+
+            return Ok(new Envelope<IEnumerable<PatientDto>>(items, new { version = "v1", count = items.Count }));
+        }
+
+        private TimeZoneInfo ResolveTz()
+        {
+            var header = Request.Headers["X-User-Timezone"].FirstOrDefault();
+            var tzId = string.IsNullOrWhiteSpace(header) ? "America/Merida" : header!.Trim();
+
+            try { return TimeZoneInfo.FindSystemTimeZoneById(tzId); }
+            catch
+            {
+                var map = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+                {
+                    ["America/Merida"] = "Central Standard Time (Mexico)",
+                    ["America/Mexico_City"] = "Central Standard Time (Mexico)",
+                    ["UTC"] = "UTC"
+                };
+                if (map.TryGetValue(tzId, out var winId))
+                {
+                    try { return TimeZoneInfo.FindSystemTimeZoneById(winId); } catch { }
+                }
+                return TimeZoneInfo.Utc;
             }
         }
     }

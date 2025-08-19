@@ -16,16 +16,31 @@ public sealed class RegisterPatientUseCase(IPatientRepository repo) : IRegisterP
     {
         var dob = input.DateOfBirth ?? throw new ValidationException("Date of birth is required.");
 
+
         var entity = Patient.Create(input.Name, dob, input.Symptoms);
         var saved = await repo.AddAsync(entity);
+
+
+        // "Hoy" según la TZ del usuario (se obtiene vía toUserTz)
+        var today = DateOnly.FromDateTime(toUserTz(DateTime.UtcNow).DateTime);
+
 
         return new PatientDto
         {
             Id = saved.Id,
             Name = saved.Name,
-            DateOfBirth = saved.DateOfBirth,
+            Age = CalculateAge(saved.DateOfBirth, today),
             Symptoms = saved.Symptoms,
             CreatedAt = toUserTz(saved.CreatedAtUtc)
         };
+    }
+
+
+    private static int CalculateAge(DateOnly dob, DateOnly today)
+    {
+        var age = today.Year - dob.Year;
+        if (today.Month < dob.Month || (today.Month == dob.Month && today.Day < dob.Day))
+            age--;
+        return age;
     }
 }
