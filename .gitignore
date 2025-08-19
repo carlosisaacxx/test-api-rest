@@ -56,5 +56,4 @@ nunit-*.xml
 .vs
 .csproj.user
 *.user
-/Patients.Infrastructure/Migrations
 /src/Patients.Infrastructure/Migrations
