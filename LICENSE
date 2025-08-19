@@ -1,0 +1,132 @@
+Licensor: Carlos Isaac Guzmán Pérez
+Licensed Work: https://github.com/carlosisaacxx/test-api-rest
+Change Date: 2028-08-18
+Change License: MIT
+Additional Use Grant: None
+
+====================================================================
+Business Source License 1.1
+====================================================================
+
+The Business Source License (this “License”) is not an Open Source license.
+However, the Licensed Work will be made available under the Change License
+on the Change Date, as provided below.
+
+Definitions
+-----------
+“Licensor” means the copyright owner or entity authorized by the copyright
+owner that is granting this License.
+
+“Licensed Work” means the software and other works made available by the
+Licensor under this License, including any modifications or derivative works
+you make based on it.
+
+“Additional Use Grant” means any additional use grant stated by the Licensor
+above.
+
+“Change Date” means the earlier of (a) the date specified by the Licensor
+above, and (b) a date that is four years from the date the Licensed Work was
+first publicly released under this License.
+
+“Change License” means the license identified by the Licensor above that will
+apply to the Licensed Work on the Change Date.
+
+“Non-Production Use” means any use of the Licensed Work that is not a
+Production Use.
+
+“Production Use” means use of the Licensed Work for or in connection with
+the provision of a service, application, or product to third parties, or
+for internal use in or for the benefit of a business in production or
+at-scale, including hosting or offering the Licensed Work as, or as part of,
+a service. Any use other than Non-Production Use is a Production Use.
+
+License Grant
+-------------
+Subject to the terms and conditions of this License, Licensor hereby grants
+you a non-exclusive, worldwide, non-sublicensable, non-transferable license to:
+
+1. make Non-Production Use of the Licensed Work;
+2. reproduce and create derivative works of the Licensed Work for
+   Non-Production Use; and
+3. redistribute the Licensed Work and derivative works for Non-Production Use,
+   provided that you (i) include a copy of this License with any copy of the
+   Licensed Work and derivative works that you distribute, and (ii) do not
+   remove or alter any copyright, patent, trademark, or attribution notices.
+
+Additional Use Grant (if any)
+-----------------------------
+If an Additional Use Grant is stated above, you may exercise the rights
+granted therein. If no Additional Use Grant is stated, there is no license
+for any Production Use prior to the Change Date.
+
+No Production Use
+-----------------
+Except as expressly permitted by an Additional Use Grant (if any), this
+License does not grant you any right to make Production Use of the Licensed
+Work prior to the Change Date.
+
+Patents
+-------
+The Licensor grants you a non-exclusive, worldwide, non-sublicensable,
+non-transferable, royalty-free patent license to make, use, sell, offer to
+sell, import, and otherwise dispose of the Licensed Work solely for
+Non-Production Use, under any patent claims licensable by the Licensor that
+are necessarily infringed by the Licensed Work. This patent license terminates
+immediately if you institute patent litigation (including a cross-claim or
+counterclaim) against any party alleging that the Licensed Work or a
+contribution incorporated within the Licensed Work constitutes direct or
+contributory patent infringement.
+
+Redistribution
+--------------
+Any redistribution of the Licensed Work or derivative works must include a
+copy of this License and retain all notices. If you distribute derivative
+works, you must cause the files containing any notices to carry prominent
+notices stating that you changed the files and the date of any change.
+
+No Trademark License
+--------------------
+This License does not grant any rights to use the Licensor’s name, logos, or
+trademarks, except as necessary to comply with the attribution requirements
+above.
+
+Termination
+-----------
+If you violate the terms of this License, your rights under this License
+terminate automatically. Upon termination, you must immediately cease use and
+distribution of the Licensed Work and any derivative works. Termination of
+your rights under this License does not terminate the licenses of parties
+who have received copies or rights from you under this License.
+
+Change Date; Change License
+---------------------------
+On the Change Date, the Change License will apply to the Licensed Work, and
+this License will terminate for the Licensed Work. The Licensor may also
+elect to release the Licensed Work under the Change License earlier than the
+Change Date.
+
+Disclaimer of Warranty
+----------------------
+THE LICENSED WORK IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. IN NO EVENT
+SHALL THE LICENSOR OR ANY COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES,
+OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE,
+ARISING FROM, OUT OF, OR IN CONNECTION WITH THE LICENSED WORK OR THE USE OR
+OTHER DEALINGS IN THE LICENSED WORK.
+
+Limitation of Liability
+-----------------------
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL THE
+LICENSOR BE LIABLE FOR ANY LOST PROFITS, REVENUE, OR DATA, OR FOR ANY
+INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL, EXEMPLARY, OR PUNITIVE DAMAGES,
+HOWEVER CAUSED, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+General
+-------
+If any provision of this License is unenforceable, that provision will be
+interpreted to accomplish the objectives of that provision to the greatest
+extent possible under applicable law, and the remaining provisions will
+remain in full force and effect. This License will be governed by and
+construed in accordance with the laws applicable to the Licensor, without
+regard to principles of conflicts of law.
