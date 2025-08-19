@@ -57,3 +57,4 @@ nunit-*.xml
 .csproj.user
 *.user
 /src/Patients.Infrastructure/Migrations
+/src/Patients.Api/patients.db
