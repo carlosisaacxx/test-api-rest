@@ -3,6 +3,7 @@ using Patients.Domain.Entities;
 
 namespace Patients.Tests.Unit
 {
+    [Trait("Category", "Unit")]
     public class PatientTests
     {
         [Fact]

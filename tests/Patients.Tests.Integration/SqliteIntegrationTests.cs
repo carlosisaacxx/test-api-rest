@@ -7,6 +7,7 @@ using Patients.Infrastructure.Repositories;
 
 namespace Patients.Tests.Integration;
 
+[Trait("Category", "Integration")]
 public class SqliteIntegrationTests
 {
     [Fact]
